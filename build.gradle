@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.2.+'
+	id 'fabric-loom' version '1.7-SNAPSHOT'
 	id 'maven-publish'
 
 	id "com.github.breadmoirai.github-release" version "2.4.1"
@@ -8,8 +8,8 @@ plugins {
 	id "com.matthewprenger.cursegradle" version "1.4.0"
 }
 
-sourceCompatibility = JavaVersion.VERSION_17
-targetCompatibility = JavaVersion.VERSION_17
+sourceCompatibility = JavaVersion.VERSION_21
+targetCompatibility = JavaVersion.VERSION_21
 
 String getGitVersion(Project project) {
 	if (grgit != null) {
@@ -60,10 +60,10 @@ dependencies {
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
 
-	modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}") {
-		exclude(group: "net.fabricmc.fabric-api")
-		exclude(group: "net.fabricmc.fabric-loader")
-	}
+	//modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}") {
+	//	exclude(group: "net.fabricmc.fabric-api")
+	//	exclude(group: "net.fabricmc.fabric-loader")
+	//} Temporarily commented this out because mod menu not updated yet
 }
 
 loom {
@@ -86,7 +86,7 @@ tasks.withType(JavaCompile).configureEach {
 	it.options.encoding = "UTF-8"
 
 	// Minecraft 1.18 (1.18-pre2) upwards uses Java 17.
-	it.options.release = 17
+	it.options.release = 21
 }
 
 java {

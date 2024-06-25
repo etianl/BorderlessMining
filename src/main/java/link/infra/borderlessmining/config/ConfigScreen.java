@@ -58,8 +58,8 @@ public abstract class ConfigScreen extends Screen {
 			return 400;
 		}
 
-		protected int getScrollbarPositionX() {
-			return super.getScrollbarPositionX() + 32;
+		protected int getScrollbarX() {
+			return super.getScrollbarX() + 32;
 		}
 
 		public Style getHoveredStyle(int mouseX, int mouseY) {
@@ -117,11 +117,6 @@ public abstract class ConfigScreen extends Screen {
 			drawContext.drawHoverEvent(this.textRenderer, hoveredStyle, mouseX, mouseY);
 		}
 		drawContext.drawCenteredTextWithShadow(this.textRenderer, this.title, this.width / 2, 10, 16777215);
-	}
-
-	@Override
-	public void renderBackground(DrawContext context, int mouseX, int mouseY, float delta) {
-		this.renderBackgroundTexture(context);
 	}
 
 	public abstract void addElements();

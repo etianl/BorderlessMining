@@ -18,11 +18,6 @@
   "icon": "assets/borderlessmining/icon.png",
 
   "environment": "client",
-  "entrypoints": {
-    "modmenu" : [
-      "link.infra.borderlessmining.config.ModMenuCompat"
-    ]
-  },
   "mixins": [
     {
       "config": "borderlessmining.mixins.json",
@@ -32,8 +27,8 @@
   "accessWidener": "borderlessmining.accesswidener",
 
   "depends": {
-    "fabricloader": ">=0.7.2",
+    "fabricloader": ">=0.15.11",
     "fabric-resource-loader-v0": "*",
-    "minecraft": "~1.20.2"
+    "minecraft": "~1.21"
   }
 }
